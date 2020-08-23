@@ -1,10 +1,15 @@
 package com.dbinding.jc.databindingdemo.model;
 
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
+
+import com.android.databinding.library.baseAdapters.BR;
+
 /**
  * Created by chenzujie on 2020/8/23.
  */
 
-public class UserInfo {
+public class UserInfo extends BaseObservable{
 
     private String name; // 姓名
     private String sex; //性别
@@ -33,12 +38,14 @@ public class UserInfo {
         this.sex = sex;
     }
 
+    @Bindable
     public int getAge() {
         return age;
     }
 
     public void setAge(int age) {
         this.age = age;
+        notifyPropertyChanged(BR.age);
     }
 
     public String getJob() {

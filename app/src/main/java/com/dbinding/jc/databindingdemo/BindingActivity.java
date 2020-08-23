@@ -1,9 +1,14 @@
 package com.dbinding.jc.databindingdemo;
 
 import android.app.Activity;
+import android.databinding.BindingAdapter;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.dbinding.jc.databindingdemo.model.UserInfo;
 
 public class BindingActivity extends Activity {
@@ -32,5 +37,18 @@ public class BindingActivity extends Activity {
     private void setUIData(){
         userInfoBinding.setTitle("个人介绍");
         userInfoBinding.setUserInfo(userInfo);
+        userInfoBinding.setActivity(this);
+    }
+
+    @BindingAdapter("android:src")
+    public static void setImageUrl(ImageView view, String url) {
+        Glide.with(view.getContext()).load(url).into(view);
+    }
+
+
+    public void addAge() {
+        int age = userInfo.getAge();
+        userInfo.setAge(++age);
+        Log.d("Click", userInfo.getAge() + "");
     }
 }
