@@ -42,5 +42,6 @@ public class BindingView extends BaseView<BindingPresenter> implements IBindingV
     public void setUIData(UserInfo userInfo) {
         userInfoBinding.setUserInfo(userInfo);
         userInfoBinding.setTitle("个人介绍");
+        userInfoBinding.setPresenter(mPresenter);
     }
 }

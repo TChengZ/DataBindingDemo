@@ -1,6 +1,7 @@
 package com.dbinding.jc.databindingdemo.presenter;
 
 import android.app.Activity;
+import android.util.Log;
 
 import com.dbinding.jc.databindingdemo.model.UserInfo;
 import com.dbinding.jc.databindingdemo.view.BindingView;
@@ -19,6 +20,7 @@ public class BindingPresenter extends BasePresenter<BindingView> implements IBin
 
     @Override
     public void addAge() {
+        Log.d("Test", "addAge");
         int age = userInfo.getAge();
         userInfo.setAge(++age);
     }
