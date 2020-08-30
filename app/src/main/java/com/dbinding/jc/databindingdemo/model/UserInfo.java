@@ -21,13 +21,14 @@ public class UserInfo extends BaseObservable{
     public UserInfo(){
 
     }
-
+    @Bindable
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+        notifyPropertyChanged(BR.name);
     }
 
     public String getSex() {

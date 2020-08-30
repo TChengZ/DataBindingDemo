@@ -3,8 +3,8 @@
     <data class="com.dbinding.jc.databindingdemo.binding.UserInfoBinding">
         <variable name="title" type="java.lang.String" />
         <variable name="userInfo" type="com.dbinding.jc.databindingdemo.model.UserInfo"/>
-        <variable name="activity"
-            type="com.dbinding.jc.databindingdemo.BindingActivity"/>
+        <variable name="presenter"
+            type="com.dbinding.jc.databindingdemo.presenter.BindingPresenter"/>
         <import type="com.dbinding.jc.databindingdemo.util.Utils"/>
     </data>
     <ScrollView
@@ -192,7 +192,7 @@
                 android:id="@+id/btn_add_age"
                 android:layout_marginTop="10dp"
                 style="@style/btn"
-                android:onClick="@{() -> activity.addAge()}"
+                android:onClick="@{() -> presenter.addAge()}"
                 />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
