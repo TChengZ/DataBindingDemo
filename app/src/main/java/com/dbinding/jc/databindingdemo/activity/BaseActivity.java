@@ -35,8 +35,8 @@ public abstract class BaseActivity<P extends IPresenter, V extends IView> extend
     @Override
     protected void onDestroy(){
         super.onDestroy();
-        mPresenter.onCreate();
-        mViewModel.onCreate();
+        mPresenter.onDestroy();
+        mViewModel.onDestroy();
     }
 
 }

@@ -12,7 +12,7 @@ import com.dbinding.jc.databindingdemo.view.BindingView;
 
 public class BindingPresenter extends BasePresenter<BindingView> implements IBindingPresenter<BindingView>{
 
-    private UserInfo userInfo;
+    private UserInfo mUserInfo;
 
     public BindingPresenter(Activity activity) {
         super(activity);
@@ -21,24 +21,25 @@ public class BindingPresenter extends BasePresenter<BindingView> implements IBin
     @Override
     public void addAge() {
         Log.d("Test", "addAge");
-        int age = userInfo.getAge();
-        userInfo.setAge(++age);
+        int age = mUserInfo.getAge();
+        mUserInfo.setAge(++age);
     }
 
     @Override
     public void onCreate() {
-        userInfo = new UserInfo();
-        userInfo.setName("T Cheng Z");
-        userInfo.setAge(20);
-        userInfo.setSex("男");
-        userInfo.setJob("软件工程师");
-        userInfo.setAvatar("https://avatars1.githubusercontent.com/u/2180654?s=400&u=6d0310a6cab9805d89f4d8ec8d5ce2114e408c6c&v=4");
-        userInfo.setPersonalWebsite("https://www.chenzujie.com");
-        mViewModel.setUIData(userInfo);
+        mUserInfo = new UserInfo();
+        mUserInfo.setName("T Cheng Z");
+        mUserInfo.setAge(20);
+        mUserInfo.setSex("男");
+        mUserInfo.setJob("软件工程师");
+        mUserInfo.setAvatar("https://avatars1.githubusercontent.com/u/2180654?s=400&u=6d0310a6cab9805d89f4d8ec8d5ce2114e408c6c&v=4");
+        mUserInfo.setPersonalWebsite("https://www.chenzujie.com");
+        mViewModel.setUIData(mUserInfo);
     }
 
     @Override
     public void onDestroy() {
-
+        super.onDestroy();
+        mUserInfo = null;
     }
 }

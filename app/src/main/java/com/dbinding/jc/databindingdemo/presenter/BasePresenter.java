@@ -19,4 +19,9 @@ public abstract class BasePresenter<V extends IView> implements IPresenter<V> {
     public void attachView(V viewModel){
         mViewModel = viewModel;
     }
+
+    public void onDestroy() {
+        mActivity = null;
+        mViewModel = null;
+    }
 }

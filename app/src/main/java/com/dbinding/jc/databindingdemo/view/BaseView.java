@@ -21,4 +21,9 @@ public abstract class BaseView<P extends IPresenter> implements IView<P>{
     public void attachPresenter(P presenter) {
         mPresenter = presenter;
     }
+
+    public void onDestroy() {
+        mActivity = null;
+        mPresenter = null;
+    }
 }

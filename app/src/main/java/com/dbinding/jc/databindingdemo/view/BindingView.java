@@ -16,11 +16,11 @@ import com.dbinding.jc.databindingdemo.presenter.BindingPresenter;
 
 public class BindingView extends BaseView<BindingPresenter> implements IBindingView<BindingPresenter>{
 
-    private com.dbinding.jc.databindingdemo.binding.UserInfoBinding userInfoBinding = null;
+    private com.dbinding.jc.databindingdemo.binding.UserInfoBinding mUserInfoBinding = null;
 
     public BindingView(Activity activity) {
         super(activity);
-        userInfoBinding = DataBindingUtil.setContentView(activity, R.layout.activity_binding);
+        mUserInfoBinding = DataBindingUtil.setContentView(activity, R.layout.activity_binding);
     }
 
     @Override
@@ -35,13 +35,14 @@ public class BindingView extends BaseView<BindingPresenter> implements IBindingV
 
     @Override
     public void onDestroy() {
-
+        super.onDestroy();
+        mUserInfoBinding = null;
     }
 
     @Override
     public void setUIData(UserInfo userInfo) {
-        userInfoBinding.setUserInfo(userInfo);
-        userInfoBinding.setTitle("个人介绍");
-        userInfoBinding.setPresenter(mPresenter);
+        mUserInfoBinding.setUserInfo(userInfo);
+        mUserInfoBinding.setTitle("个人介绍");
+        mUserInfoBinding.setPresenter(mPresenter);
     }
 }
