@@ -1,10 +1,12 @@
 package com.dbinding.jc.databindingdemo.presenter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 import com.dbinding.jc.databindingdemo.R;
 import com.dbinding.jc.databindingdemo.model.UserInfo;
 import com.dbinding.jc.databindingdemo.view.BindingView;
+import com.dbinding.jc.databindingdemo.activity.ListDataActivity;
 
 /**
  * Created by chenzujie on 2020/8/30.
@@ -20,9 +22,14 @@ public class BindingPresenter extends BasePresenter<BindingView> implements IBin
 
     @Override
     public void addAge() {
-        Log.d("Test", "addAge");
         int age = mUserInfo.getAge();
         mUserInfo.setAge(++age);
+    }
+
+    @Override
+    public void listPage() {
+        Intent i = new Intent(this.mActivity, ListDataActivity.class);
+        this.mActivity.startActivity(i);
     }
 
     @Override

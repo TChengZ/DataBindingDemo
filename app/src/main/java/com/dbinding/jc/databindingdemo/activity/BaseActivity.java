@@ -25,10 +25,12 @@ public abstract class BaseActivity<P extends IPresenter, V extends IView> extend
         super.onCreate(savedInstanceState);
         mViewModel = createViewModel(this);
         mPresenter = createPresenter(this);
-        mViewModel.attachPresenter(mPresenter);
-        mPresenter.attachView(mViewModel);
-        mPresenter.onCreate();
-        mViewModel.onCreate();
+        if(null != mViewModel && null != mPresenter) {
+            mViewModel.attachPresenter(mPresenter);
+            mPresenter.attachView(mViewModel);
+            mPresenter.onCreate();
+            mViewModel.onCreate();
+        }
     }
 
     protected abstract V createViewModel(Activity activity);

@@ -9,4 +9,6 @@ import com.dbinding.jc.databindingdemo.view.IView;
 public interface IBindingPresenter<V extends IView> extends IPresenter<V>{
 
     void addAge();
+
+    void listPage();
 }
