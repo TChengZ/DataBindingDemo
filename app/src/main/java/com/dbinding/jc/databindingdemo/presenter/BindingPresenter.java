@@ -2,7 +2,7 @@ package com.dbinding.jc.databindingdemo.presenter;
 
 import android.app.Activity;
 import android.util.Log;
-
+import com.dbinding.jc.databindingdemo.R;
 import com.dbinding.jc.databindingdemo.model.UserInfo;
 import com.dbinding.jc.databindingdemo.view.BindingView;
 
@@ -34,6 +34,7 @@ public class BindingPresenter extends BasePresenter<BindingView> implements IBin
         mUserInfo.setJob("软件工程师");
         mUserInfo.setAvatar("https://avatars1.githubusercontent.com/u/2180654?s=400&u=6d0310a6cab9805d89f4d8ec8d5ce2114e408c6c&v=4");
         mUserInfo.setPersonalWebsite("https://www.chenzujie.com");
+        mUserInfo.setWebsiteSymbol(String.valueOf(R.drawable.website));
         mViewModel.setUIData(mUserInfo);
     }
 

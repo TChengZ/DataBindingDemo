@@ -1,9 +1,12 @@
 package com.dbinding.jc.databindingdemo.activity;
 
 import android.app.Activity;
+import android.databinding.BindingAdapter;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.dbinding.jc.databindingdemo.R;
 import com.dbinding.jc.databindingdemo.presenter.IPresenter;
 import com.dbinding.jc.databindingdemo.view.IView;
@@ -38,5 +41,4 @@ public abstract class BaseActivity<P extends IPresenter, V extends IView> extend
         mPresenter.onDestroy();
         mViewModel.onDestroy();
     }
-
 }

@@ -17,6 +17,7 @@ public class UserInfo extends BaseObservable{
     private String job; // 工作
     private String avatar; //头像
     private String personalWebsite; //个人网站
+    private String websiteSymbol; //网站符号
 
     public UserInfo(){
 
@@ -71,5 +72,13 @@ public class UserInfo extends BaseObservable{
 
     public void setPersonalWebsite(String personalWebsite) {
         this.personalWebsite = personalWebsite;
+    }
+
+    public String getWebsiteSymbol() {
+        return websiteSymbol;
+    }
+
+    public void setWebsiteSymbol(String websiteSymbol) {
+        this.websiteSymbol = websiteSymbol;
     }
 }

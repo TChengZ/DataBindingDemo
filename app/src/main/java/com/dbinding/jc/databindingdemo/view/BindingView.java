@@ -1,11 +1,7 @@
 package com.dbinding.jc.databindingdemo.view;
 
 import android.app.Activity;
-import android.databinding.BindingAdapter;
 import android.databinding.DataBindingUtil;
-import android.widget.ImageView;
-
-import com.bumptech.glide.Glide;
 import com.dbinding.jc.databindingdemo.R;
 import com.dbinding.jc.databindingdemo.model.UserInfo;
 import com.dbinding.jc.databindingdemo.presenter.BindingPresenter;
@@ -26,11 +22,6 @@ public class BindingView extends BaseView<BindingPresenter> implements IBindingV
     @Override
     public void onCreate() {
 
-    }
-
-    @BindingAdapter("android:src")
-    public static void setImageUrl(ImageView view, String url) {
-        Glide.with(view.getContext()).load(url).into(view);
     }
 
     @Override
