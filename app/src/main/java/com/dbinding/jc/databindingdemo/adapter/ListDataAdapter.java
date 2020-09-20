@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import com.dbinding.jc.databindingdemo.presenter.ListDataPresenter;
 import com.dbinding.jc.databindingdemo.R;
 import com.android.databinding.library.baseAdapters.BR;
 import com.dbinding.jc.databindingdemo.model.Article;
@@ -20,10 +21,12 @@ public class ListDataAdapter extends BaseAdapter{
 
     private List<Article> mList;
     private Context mContext;
+    private ListDataPresenter mListDataPresenter;
 
-    public ListDataAdapter(Context context, List<Article> list) {
+    public ListDataAdapter(Context context, List<Article> list, ListDataPresenter listDataPresenter) {
         this.mContext = context;
         this.mList = list;
+        this.mListDataPresenter = listDataPresenter;
     }
 
     @Override
@@ -42,7 +45,7 @@ public class ListDataAdapter extends BaseAdapter{
     }
 
     @Override
-    public View getView(int i, View convertView, ViewGroup viewGroup) {
+    public View getView(final int i, View convertView, ViewGroup viewGroup) {
         if(null == mList) {
             return null;
         }
@@ -55,7 +58,8 @@ public class ListDataAdapter extends BaseAdapter{
             articleBinding = DataBindingUtil.getBinding(convertView);
         }
         Article article = mList.get(i);
-        articleBinding.setVariable(BR.article, article);
+        articleBinding.setArticle(article);
+        articleBinding.setPresenter(mListDataPresenter);
         return convertView;
     }
 }

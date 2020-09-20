@@ -27,7 +27,7 @@ public class ListDataView extends BaseView<ListDataPresenter> implements IListDa
 
     @Override
     public void setListData(List<Article> articleList) {
-        mListDataAdapter = new ListDataAdapter(mActivity, articleList);
+        mListDataAdapter = new ListDataAdapter(mActivity, articleList, mPresenter);
         mListDataBinding.setAdapter(mListDataAdapter);
     }
 
