@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data class="com.dbinding.jc.databindingdemo.binding.ArticleBinding">
+        <variable name="article" type="com.dbinding.jc.databindingdemo.model.Article"/>
+        <variable name="presenter"
+            type="com.dbinding.jc.databindingdemo.presenter.ListDataPresenter"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+        <TextView
+            android:id="@+id/stv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="6dp"
+            android:text="@{article.title}"
+            style="@style/info"
+            />
+        <TextView
+            android:id="@+id/stv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/stv_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:text="@{article.time}"
+            style="@style/info"
+            />
+        <TextView
+            android:id="@+id/stv_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/stv_time"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:text="@{article.url}"
+            style="@style/info"
+            android:textColor="@android:color/holo_blue_bright"
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@android:color/black"
+            />
+    </android.support.constraint.ConstraintLayout>
+</layout>

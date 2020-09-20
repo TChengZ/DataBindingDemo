@@ -1,7 +1,9 @@
 package com.dbinding.jc.databindingdemo.util;
 
 import android.databinding.BindingAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 import com.bumptech.glide.Glide;
 
@@ -23,5 +25,10 @@ public class BindingUtil {
         } else {
             Glide.with(view.getContext()).load(url).into(view);
         }
+    }
+
+    @BindingAdapter("listAdapter")
+    public static void setAdapter(ListView listView, BaseAdapter adapter) {
+        listView.setAdapter(adapter);
     }
 }
